@@ -1,0 +1,32 @@
+@model Hero
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Messages</title>
+</head>
+<body class="mb-5">
+<div class="container-fluid bg-dark pb-5 pt-5 mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach(var current in Model.Messages) {
+            <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">@current.MessageTitle</h5>
+                    <p class="card-text">@current.MessageContent</p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+
+</body>
+</html>

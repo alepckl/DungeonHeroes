@@ -1,0 +1,86 @@
+@model List<Dungeon>
+
+@{
+    ViewBag.Title = "Dungeons";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="~/css/dungeons.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/lib/jquery/jquery-ui.min.css" asp-append-version="true"/>
+
+    <title>Dungeons</title>
+</head>
+<body>
+<div class="container cardContainer">
+    <div class="row text-center">
+
+        <form method="post" asp-route-id="">
+            <div class="input-group">
+                                <input type="text" class="form-control rounded" name="id" hidden="true" value="@ViewData["TeamId"]"/>
+                                <input id="SearchString" type="search" class="form-control rounded" name="name" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </div>
+        </form>
+
+
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3" asp-action="CreateDungeon">
+                <a class="btn btn-dark" asp-action="CreateDungeon" type="button">Add new</a>
+            </div>
+        }
+        @foreach (var currentDungeon in Model)
+        {
+            <div class="col-xl-3 col-sm-6 mt-4 mb-4 bg-body m-lg-2">
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
+                        <a id="" class="btn btn-secondary me-md-2" asp-action="EditDungeon" asp-route-id="@currentDungeon.DungeonId" type="submit">
+                            <img id="" src="~/assets/pencil-fill.svg" alt="" width="30" height="24">
+                        </a>
+
+                        <a id="" asp-action="DeleteDungeon" asp-route-id="@currentDungeon.DungeonId" class="btn btn-danger me-md-2" type="submit">
+                            <img id="" src="~/assets/trash-fill.svg" alt="" width="30" height="24">
+                        </a>
+                    </div>
+                }
+                <div class="bg-body rounded shadow-sm py-5 px-4">
+                    <img src="@currentDungeon.ImagePath" alt="dungeonImage" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0 text-white">@currentDungeon.DungeonName</h5><span class="small text-uppercase text-muted">Niveau @currentDungeon.DungeonLevel</span>
+                    <ul class="mb-0 mt-3">
+                        @foreach (var monster in currentDungeon.Monsters)
+                        {
+                            <li class="text-white">
+                                <h6>@(monster.MonsterName)</h6>
+                            </li>
+                        }
+                    </ul>
+                    @if (ViewData["TeamId"] != null)
+                    {
+                        <form method="post" asp-action="AttackDungeon">
+                            <input id="" name="teamId" type="text" hidden="true" value="@ViewData["TeamId"]"/>`
+                            <input id="" name="dungeonId" type="text" hidden="true" value="@currentDungeon.DungeonId"/>`
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                                <a class="btn btn-secondary" type="submit">Assault Dungeon</a>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>
+</body>
+</html>
+
+@section Scripts
+{
+    <script src="~/lib/jquery/jquery-ui.js"></script>
+    <script>
+    $("#SearchString").autocomplete({source: "SearchDungeon"});
+    </script>
+}

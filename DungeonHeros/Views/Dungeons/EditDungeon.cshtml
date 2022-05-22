@@ -1,0 +1,99 @@
+@model DungeonHeros.Models.ViewModels.DungeonViewModel.DungeonEditViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="~/js/scripts.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/teams.css" asp-append-version="true"/>
+    <title>Edit dungeon</title>
+</head>
+<body>
+<div class="form-body mt-5">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <form method="post">
+                        <input class="form-control" type="text" name="dungeonId" value="@Model.DungeonId" hidden="true">
+                        <div class="col-md-12 mt-5">
+                            <h2 class="text-white">Dungeon's name</h2>
+                            <input class="form-control" type="text" name="dungeonName" placeholder="Dungeon's name" value="@Model.DungeonName" required>
+                        </div>
+                        
+                        <div class="col-md-12 mt-5">
+                            <h2 class="text-white">Image path</h2>
+                            <input class="form-control" type="text" name="imagePath" placeholder="URL - Image" required value="@Model.ImagePath">
+                        </div>
+
+                        <h2 class="text-white">Monsters</h2>
+                        <section class="DungeonDisplay mt-5 mb-2">
+                            <div class="container cardContainer">
+                                <div class="row text-center" id="monsterGroup">
+                                    @foreach (var currentMonster in Model.AlreadyInTeam)
+                                    {
+                                        <div class="col-xl-3 col-sm-6 mt-4 mb-4" id="@("monster" + currentMonster.MonsterId)">
+                                            <div class="bg-body rounded shadow-sm px-4 py-5">
+                                                <div class="d-grid d-md-flex justify-content-md-end">
+                                                    <a id="@currentMonster.MonsterId" class="btn btn-danger mb-3 deleteCardButton" type="button" onclick="removeMonster(this)">
+                                                        <img src="https://localhost:7074/assets/trash-fill.svg" alt="" width="30" height="24">
+                                                    </a>
+                                                </div>
+                                                <img id="@("monsterImage" + currentMonster.MonsterId)" src="@currentMonster.ImagePath" alt="" width="100" class="rounded-circle mb-3 img-fluid  img-thumbnail shadow-sm">
+                                                <h5 class="mb-0 text-white" id="@("monsterName" + currentMonster.MonsterId)">@currentMonster.MonsterName</h5>
+                                                <ul class="mb-0 mt-3">
+                                                    <li class="text-white" id="@("monsterStrength" + currentMonster.MonsterId)">
+                                                        <h6>Force : @currentMonster.Strength</h6>
+                                                    </li>
+                                                    <li class="text-white" id="@("monsterStamina" + currentMonster.MonsterId)">
+                                                        <h6>Endurance : @currentMonster.Stamina</h6>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input name="monsterId[]" type="text" hidden="true" value="@currentMonster.MonsterId">
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </section>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-secondary" type="submit">Save changes</button>
+                        </div>
+                    </form>
+
+
+                    <hr class="featurette-divider mt-3 mb-3">
+
+                    <div class="container mt-4 mt-3">
+                        <div class="row row-cols-1 row-cols-md-3 g-4" id="possibleMonsters">
+                            @foreach (var monster in Model.EachOther)
+                            {
+                                <div class="col" id="@("monster" + monster.MonsterId)">
+                                    <div class="card">
+                                        <img id="@("monsterImage" + monster.MonsterId)" src="@monster.ImagePath" class="card-img-top" alt="@("image" + @monster.MonsterName)">
+                                        <div class="card-body bg-body">
+                                            <h5 id="@("monsterName" + monster.MonsterId)" class="card-title text-white">@monster.MonsterName</h5>
+                                            <p id="@("monsterStrength" + monster.MonsterId)" class="card-text">Force : @monster.Strength</p>
+                                            <p id="@("monsterStamina" + monster.MonsterId)" class="card-text">Endurance : @monster.Stamina</p>
+                                            <a id="@monster.MonsterId" class="btn btn-primary" onclick="addMonster(this)">Add to dungeon</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

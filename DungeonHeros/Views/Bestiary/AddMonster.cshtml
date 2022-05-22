@@ -1,0 +1,59 @@
+@model dynamic
+
+@{
+    ViewBag.Title = "Add a monster";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true"/>
+    <script src="~/js/scripts.js" asp-append-version="true"></script>
+    <title>Profile</title>
+</head>
+<body>
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Add monster</h3>
+                    <form method="post" class="requires-validation" novalidate>
+
+                        <div class="col-md-12 mt-3">
+                            <input class="form-control" type="text" name="monsterName" placeholder="Monster's name" required>
+                        </div>
+
+                        <div class="col-md-12 mt-5">
+                            <input class="form-control" type="text" name="imagePath" placeholder="URL - Image" required>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <input class="form-control" type="number" name="strength" placeholder="Strength" required>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <input class="form-control" type="number" name="stamina" placeholder="Stamina" required>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <select name="raceId">
+                                <option value="5">Dragon</option>
+                                <option value="6">Animal</option>
+                                <option value="7">Monster</option>
+                                <option value="8">Demon</option>
+                            </select>
+                        </div>
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Apply modifications</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

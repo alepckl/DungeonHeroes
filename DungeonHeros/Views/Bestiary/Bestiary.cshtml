@@ -1,0 +1,51 @@
+@model IList<DungeonHeros.Models.ViewModels.BestiaryViewModel.DisplayBestiaryViewModel>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="~/css/dungeons.css" asp-append-version="true"/>
+    <title>Dungeons</title>
+</head>
+<body>
+<div class="container cardContainer">
+    <div class="row text-center">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3" asp-action="CreateDungeon">
+            <a class="btn btn-dark" asp-action="AddMonster" type="button">Add new</a>
+        </div>
+        @foreach (var currentMonster in Model)
+        {
+            <div class="col-xl-3 col-sm-6 mt-4 mb-4 bg-body m-lg-2">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
+                    <a id="" class="btn btn-secondary me-md-2" asp-action="EditMonster" asp-route-id="@currentMonster.MonsterId" type="submit">
+                        <img id="" src="~/assets/pencil-fill.svg" alt="" width="30" height="24">
+                    </a>
+
+                    <a id="" asp-action="DeleteMonster" asp-route-id="@currentMonster.MonsterId" class="btn btn-danger me-md-2" type="submit">
+                        <img id="" src="~/assets/trash-fill.svg" alt="" width="30" height="24">
+                    </a>
+                </div>
+                <div class="bg-body rounded shadow-sm py-5 px-4">
+                    <img src="@currentMonster.ImagePath" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0 text-white">@currentMonster.Name</h5><span class="small text-uppercase text-muted">@currentMonster.RaceName</span>
+                    <ul class="mb-0 mt-3">
+                        <li class="text-white">
+                            <h6>Stamina : @currentMonster.Stamina</h6>
+                        </li>
+                        <li class="text-white">
+                            <h6>Strength : @currentMonster.Strength</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+@model List<Monster>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="~/js/scripts.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/teams.css" asp-append-version="true"/>
+    <title>Document</title>
+</head>
+<body>
+<div class="form-body mt-5">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <form method="post">
+                        <div class="col-md-12 mt-5">
+                            <input class="form-control" type="text" name="dungeonName" placeholder="Dungeon's name" required>
+                        </div>
+
+                        <div class="col-md-12 mt-5">
+                            <input class="form-control" type="text" name="imagePath" placeholder="URL - Image" required>
+                        </div>
+
+                        <section class="DungeonDisplay mt-5 mb-2">
+                            <div class="container cardContainer">
+                                <div class="row text-center" id="monsterGroup">
+                                </div>
+                            </div>
+                        </section>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-secondary" type="submit">Create Dungeon</button>
+                        </div>
+                    </form>
+
+
+                    <hr class="featurette-divider mt-3 mb-3">
+
+                    <div class="container mt-4 mt-3">
+                        <div class="row row-cols-1 row-cols-md-3 g-4" id="possibleMonsters">
+                            @foreach (var monster in Model)
+                            {
+                                <div class="col" id="@("monster" + monster.MonsterId)">
+                                    <div class="card">
+                                        <img id="@("monsterImage" + monster.MonsterId)" src="@monster.ImagePath" class="card-img-top" alt="@("image" + @monster.MonsterName)">
+                                        <div class="card-body bg-body">
+                                            <h5 id="@("monsterName" + monster.MonsterId)" class="card-title">@monster.MonsterName</h5>
+                                            <p id="@("monsterRace" + monster.MonsterId)" class="card-text">Race : @monster.MonsterName</p>
+                                            <p id="@("monsterStrength" + monster.MonsterId)" class="card-text">Force : @monster.Strength</p>
+                                            <p id="@("monsterStamina" + monster.MonsterId)" class="card-text">Endurance : @monster.Stamina</p>
+                                            <a id="@monster.MonsterId" class="btn btn-primary" onclick="addMonster(this)">Add to dungeon</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

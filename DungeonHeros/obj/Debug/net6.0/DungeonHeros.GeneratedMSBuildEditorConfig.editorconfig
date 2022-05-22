@@ -1,0 +1,140 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DungeonHeros
+build_property.RootNamespace = DungeonHeros
+build_property.ProjectDir = /Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Bestiary/AddMonster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmVzdGlhcnkvQWRkTW9uc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Bestiary/Bestiary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmVzdGlhcnkvQmVzdGlhcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Bestiary/EditMonster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmVzdGlhcnkvRWRpdE1vbnN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Dungeons/CreateDungeon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRHVuZ2VvbnMvQ3JlYXRlRHVuZ2Vvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Dungeons/Dungeons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRHVuZ2VvbnMvRHVuZ2VvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Dungeons/EditDungeon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRHVuZ2VvbnMvRWRpdER1bmdlb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Dungeons/ResultDungeon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRHVuZ2VvbnMvUmVzdWx0RHVuZ2Vvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Message/Messages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVzc2FnZS9NZXNzYWdlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Message/SendMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVzc2FnZS9TZW5kTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Teams/CreateTeam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVhbXMvQ3JlYXRlVGVhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Teams/TeamModification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVhbXMvVGVhbU1vZGlmaWNhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Teams/Teams.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVhbXMvVGVhbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/User/ProfileModification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Qcm9maWxlTW9kaWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-c6a3muwrgi

@@ -1,0 +1,99 @@
+@model Monster
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true"/>
+    <script src="~/js/scripts.js" asp-append-version="true"></script>
+    <title>Monster edition</title>
+</head>
+<body>
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Modify @Model.MonsterName</h3>
+                    <form method="post" class="requires-validation" novalidate>
+
+                        <input class="form-control" type="text" name="monsterId" value="@Model.MonsterId" placeholder="Monster's name" hidden="true">
+
+                        <div class="col-md-12 mt-3">
+                            <input class="form-control" type="text" name="monsterName" value="@Model.MonsterName" placeholder="Monster's name" required>
+                        </div>
+
+                        <div class="col-md-12 mt-5">
+                            <input class="form-control" type="text" name="imagePath" placeholder="URL - Image" required>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <input class="form-control" type="number" name="strength" value="@Model.Strength" placeholder="Strength" required>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <input class="form-control" type="number" name="stamina" value="@Model.Stamina" placeholder="Stamina" required>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <select name="raceId">
+                                @{
+                                    if (Model.RaceId == 5)
+                                    {
+                                        <option value="5" selected>Dragon</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="5">Dragon</option>
+                                    }
+                                }
+                                @{
+                                    if (Model.RaceId == 6)
+                                    {
+                                        <option value="6" selected>Animal</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="6">Animal</option>
+                                    }
+                                }
+                                @{
+                                    if (Model.RaceId == 7)
+                                    {
+                                        <option value="7" selected>Monster</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="7">Monster</option>
+                                    }
+                                }
+                                @{
+                                    if (Model.RaceId == 8)
+                                    {
+                                        <option value="8" selected>Demon</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="8">Demon</option>
+                                    }
+                                }
+
+                            </select>
+                        </div>
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Apply modifications</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

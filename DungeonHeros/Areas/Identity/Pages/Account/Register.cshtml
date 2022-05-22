@@ -1,0 +1,89 @@
+﻿@page
+@using Microsoft.EntityFrameworkCore
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="~/css/profile.css" asp-append-version="true"/>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <title>Profile</title>
+</head>
+<body>
+<div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Create Profile</h3>
+                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                        <div class="col-md-12">
+                            <input asp-for="Input.Name" class="form-control" placeholder="Hero's name" aria-required="true"/>
+                            <label asp-for="Input.Name"></label>
+                            <span asp-validation-for="Input.Name" class="text-danger"></span>
+                        </div>
+                        
+                        
+                        <div class="col-md-12">
+                            <input asp-for="Input.Email" class="form-control" placeholder="Mail address" aria-required="true"/>
+                            <label asp-for="Input.Email"></label>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input asp-for="Input.Password" class="form-control" placeholder="Password" required>
+                            <label asp-for="Input.Password"></label>
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirmation Password" required>
+                            <label asp-for="Input.ConfirmPassword"></label>
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input asp-for="Input.DateOfBirth" class="form-control" autocomplete="Date of birth" aria-required="true"/>
+                            <label asp-for="Input.DateOfBirth"></label>
+                            <span asp-validation-for="Input.DateOfBirth" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input asp-for="Input.Stamina" id="inputStamina" class="form-control" autocomplete="Stamina" placeholder="Stamina" aria-required="true" value="0" onchange="onStaminaChanged()"/>
+                            <label asp-for="Input.Stamina"></label>
+                            <span asp-validation-for="Input.Stamina" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input asp-for="Input.Strength" id="inputStrength" class="form-control" autocomplete="Strength" placeholder="Strength" value="0" aria-required="true" onchange="onStrengthChanged()"/>
+                            <label asp-for="Input.Strength"></label>
+                            <span asp-validation-for="Input.Strength" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12 mt-1">
+                            <label class="mr-1 text-white" id="race" for="race">Race: </label>
+
+                            @Html.DropDownListFor(m => m.Input.Ra, Model.Races)
+                            <label asp-for="Input.Ra"></label>
+                            <span asp-validation-for="Input.Ra" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12 mt-1">
+                            <label class="mr-1 text-white" id="classes" for="classes">Classes: </label>
+                            @Html.DropDownListFor(m => m.Input.Cl, Model.Classes)
+                            <label asp-for="Input.Cl"></label>
+                            <span asp-validation-for="Input.Cl" class="text-danger"></span>
+                        </div>
+
+                        <button id="registerSubmit" type="submit" class="btn btn-lg btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

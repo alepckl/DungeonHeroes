@@ -1,0 +1,84 @@
+@model IList<DungeonHeros.Models.ViewModels.TeamDisplayViewModel>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="~/css/teams.css" asp-append-version="true"/>
+  <script src="~/js/scripts.js" asp-append-version="true"></script>
+  <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end addMargin" asp-action="CreateDungeon">
+        <a class="btn btn-dark" asp-action="CreateTeam" type="button">Create new</a>
+    </div>
+</div>
+
+@foreach (var current in Model)
+{
+    <!-- Team Part -->
+<section class="TeamDisplay">
+    <div class="container cardContainer">
+        <div class="row text-center">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
+            
+                <a id="@current.TeamId" class="btn btn-secondary me-md-2" asp-action="TeamModification" asp-route-id="@current.TeamId" type="submit">
+                    <img id="" src="~/assets/pencil-fill.svg" alt="" width="30" height="24">
+                </a>
+
+                <a id="@current.TeamId" class="btn btn-danger me-md-2" type="submit" asp-action="Delete" asp-route-id="@current.TeamId">
+                    <img id="" src="~/assets/trash-fill.svg" alt="" width="30" height="24">
+                </a>
+            </div>
+        
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-dark">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-white" id="exampleModalLabel">Are you sure ?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-white">
+                            Are you sure you want to remove this team? This action is irreversible.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Close</button>
+                            <a type="submit" data-bs-dismiss="modal" class="btn btn-secondary text-white" asp-action="Delete" asp-route-id="@current.TeamId">Delete team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @foreach (var currentHero in current.allHeroes)
+            {
+                <!-- Team item -->
+                <div class="col-xl-3 col-sm-6 mt-4 mb-4">
+                    <div class="bg-body rounded shadow-sm py-5 px-4"><img src="@currentHero.ImagePath" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0 text-white">@currentHero.Name</h5><span class="small text-uppercase text-muted">@currentHero.Classe</span>
+                        <ul class="mb-0 mt-3">
+                            <li class="text-white"><h6>Niveau : @currentHero.Level</h6></li>
+                            <li class="text-white"><h6>@currentHero.Race</h6></li>
+                            <li class="text-white"><h6>@currentHero.Classe</h6></li>
+                        </ul>
+                    </div>
+                </div><!-- End -->   
+            }
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                                                <a asp-controller="Dungeons" asp-action="Dungeons" asp-route-id="@current.TeamId" class="btn btn-secondary" type="submit">Assault Dungeon</a>
+                                            </div>
+        </div>
+    </div>
+</section>   
+}
+
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+@model IList<DungeonHeros.Models.ViewModels.UserViewModel>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="~/css/teams.css" asp-append-version="true"/>
+  <script src="~/js/scripts.js" asp-append-version="true"></script>
+  <title>Document</title>
+</head>
+<body>
+
+<h1 class="text-white" style="font-size: 60px">Create Team</h1>
+
+<form id="formValues" method="post">
+    <section class="TeamDisplay">
+    <div class="container cardContainer">
+        <div class="row text-center" id="team">
+            <input id="" name="players[]" type="text" hidden="true" value="@ViewData["HeroId"]"/>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-secondary" type="button" onclick="check()">Apply and create</button>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+            <button id="sumbitForm" type="submit" hidden="true"></button>
+    </div>
+</section>
+</form>
+
+<hr class="featurette-divider mt-3 mb-3">
+
+<div class="container mt-4 mt-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="possiblePlayers">
+        @foreach (var currentUser in Model)
+        {
+            
+            <div class="col" id="@("player" + currentUser.UserId)">
+                <div class="card">
+                    <img id="@("image" + currentUser.UserId)" src="@currentUser.ImagePath" class="card-img-top" alt="@currentUser.ImagePath">
+                    <div class="card-body">
+                        <h5 id="@("name" + currentUser.UserId)" class="card-title">@currentUser.Name</h5>
+                        <p id="@("class" + currentUser.UserId)" class="card-text">Classe : @currentUser.Classe</p>
+                        <p id="@("race" + currentUser.UserId)" class="card-text">Race : @currentUser.Race</p>
+                        <p id="@("niveau" + currentUser.UserId)" class="card-text">Niveau : @currentUser.Level</p>
+                        <p id="@("force" + currentUser.UserId)" class="card-text">Force : @currentUser.Strength</p>
+                        <p id="@("endurance" + currentUser.UserId)" class="card-text">Endurance : @currentUser.Stamina</p>
+                        <a href="#" id="@currentUser.UserId" class="btn btn-primary" onclick="addPlayer(this)">Add to my team</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<button id="popup" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" hidden="true">
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Full team</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Your team can only contain 4 members. Please delete one in order to add a new member.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+

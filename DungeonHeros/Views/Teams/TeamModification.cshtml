@@ -1,0 +1,109 @@
+@model DungeonHeros.Models.ViewModels.EditTeamViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="~/css/teams.css" asp-append-version="true"/>
+    <script src="~/js/scripts.js" asp-append-version="true"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<h1 class="text-white" style="font-size: 60px">Modifier l'équipe</h1>
+
+<form id="formValues" method="post">
+    <section class="TeamDisplay">
+        <div class="container cardContainer">
+            <div class="row text-center" id="team">
+                <input id="" name="teamId" type="text" hidden="true" value="@ViewData["ToModif"]"/>`
+                <input id="" name="players[]" type="text" hidden="true" value="@ViewData["HeroId"]"/>`
+                @foreach (var currentHero in Model.AlreadyInTeam)
+                {
+                    <div class="col-xl-3 col-sm-6 mt-5 mb-4" id="@("Member" + @currentHero.UserId)">
+                        <div class="bg-body rounded shadow-sm px-4 py-5">
+                            <div class="d-grid d-md-flex justify-content-md-end">
+                                <a id="@currentHero.UserId" class="btn btn-danger mb-3 deleteCardButton" type="button" onclick="removePlayer(this)">
+                                    <img id="@("trash" + currentHero.UserId)" class="" src="~/assets/trash-fill.svg" alt="trash" width="30" height="24">
+                                </a>
+                            </div>
+                            <img id="@("image" + currentHero.UserId)" src="@currentHero.ImagePath" alt="" width="100" height="100px" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <h5 class="mb-0 text-white" id="@("name" + currentHero.UserId)">@currentHero.Name</h5><span class="small text-uppercase text-muted" id="@("class" + @currentHero.UserId)">@currentHero.Classe</span>
+                            <ul class="mb-0 mt-3">
+                                <li class="text-white" id="@("race" + currentHero.UserId)">
+                                    <h6>Race : @currentHero.Race</h6>
+                                </li>
+                                <li class="text-white" id="@("level" + currentHero.UserId)">
+                                    <h6>Level : @currentHero.Level</h6>
+                                </li>
+                                <li class="text-white" id="@("strength" + currentHero.UserId)">
+                                    <h6>Strength : @currentHero.Strength</h6>
+                                </li>
+                                <li class="text-white" id="@("stamina" + currentHero.UserId)">
+                                    <h6>Stamina : @currentHero.Stamina</h6>
+                                </li>
+                            </ul>
+                            <input id="" name="players[]" type="text" hidden="true" value="@currentHero.UserId"/>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-secondary" type="submit">Confirm modifications</button>
+            </div>
+        </div>
+    </section>
+</form>
+
+<hr class="featurette-divider mt-3 mb-3">
+
+<div class="container mt-4 mt-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="possiblePlayers">
+        @foreach (var hero in Model.NotInTeam)
+        {
+            <div class="col" id="@("player" + hero.UserId)">
+                <div class="card">
+                    <img id="@("image" + hero.UserId)" src="@hero.ImagePath" class="card-img-top" alt="@hero.ImagePath">
+                    <div class="card-body">
+                        <h5 id="@("name" + hero.UserId)" class="card-title">@hero.Name</h5>
+                        <p id="@("class" + hero.UserId)" class="card-text">Classe : @hero.Classe</p>
+                        <p id="@("race" + hero.UserId)" class="card-text">Race : @hero.Race</p>
+                        <p id="@("niveau" + hero.UserId)" class="card-text">Niveau : @hero.Level</p>
+                        <p id="@("force" + hero.UserId)" class="card-text">Force : @hero.Strength</p>
+                        <p id="@("endurance" + hero.UserId)" class="card-text">Endurance : @hero.Stamina</p>
+                        <a href="#" id="@hero.UserId" class="btn btn-primary" onclick="addPlayer(this)">Add to my team</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<button id="popup" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" hidden="true">
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Full team</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Your team can only contain 4 members. Please delete one in order to add a new member.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

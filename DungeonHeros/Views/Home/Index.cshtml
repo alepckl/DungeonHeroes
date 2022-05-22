@@ -1,0 +1,119 @@
+﻿@model IList<DungeonHeros.Models.ViewModels.HallOfFame.HallOfFameViewModel>
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+</ol>
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img class="first-slide mainScreen" src="~/assets/img/elden-ring.jpeg" alt="First slide">
+        <div class="container">
+            <div class="carousel-caption text-lg-end" data-aos="fade-up">
+                <p>
+                    A new adventure in a new world.
+                    Powerful monsters, fantastic creatures...
+                    But also terrifying dungeons that contain the most fearsome monsters
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Game presentation -->
+<div class="gamepresentation"></div>
+<div class="container marketing mb-4 mt-4">
+    <div class="row featurette">
+        <div class="col-md-7" data-aos="fade-up">
+            <h2 class="featurette-heading title_societyColor">
+                First featurette heading.
+                <span
+                    class="text-muted">
+                    It'll blow your mind.
+                </span>
+            </h2>
+            <p class="lead">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem eos iste nam natus nobis repellendus. Aliquam, amet doloribus eveniet harum magni nisi perferendis quasi quos saepe tempore temporibus voluptatum!</span><span>Amet assumenda corporis dignissimos ducimus ea eos et eum, hic illo ipsa iste magni, minus, molestias mollitia natus neque nostrum nulla perferendis quaerat quidem quo sit soluta sunt ullam veniam.</span><span>Ab deleniti dolorum est eveniet illum inventore omnis perspiciatis ratione sapiente! Ab amet commodi consectetur deleniti deserunt, ea, facere laboriosam laudantium nesciunt nihil nisi nostrum odio pariatur sapiente sint tempora.</span><span>Ab at consequuntur explicabo incidunt inventore maxime modi, molestias necessitatibus nisi perferendis quaerat quis, quos sed, suscipit tempore. Cum earum enim ex fuga minus, molestias nobis temporibus. Molestias possimus, quod!</span>
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto rounded-circle" data-src="holder.js/500x500/auto" alt="500x500"
+                 style="width: 250px; height: 250px;"
+                 src="img/elden-ring.jpeg"
+                 data-holder-rendered="true">
+        </div>
+    </div>
+
+    <hr class="featurette-divider mt-5 mb-5">
+
+    <div class="row featurette">
+        <div class="col-md-9 order-md-2" data-aos="fade-up">
+            <h2 class="featurette-heading title_societyColor">
+                Crazy dungeons with <span class="text-muted">exclusive monsters.</span>
+            </h2>
+            <p class="lead">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid commodi consectetur cum doloribus expedita incidunt, molestiae nam nulla numquam, odio odit officiis placeat quos saepe sint sit soluta vero?</span><span>Amet ea molestiae molestias numquam officiis placeat provident, quod repudiandae suscipit temporibus. Amet debitis, deleniti eum expedita, itaque maiores, nam nulla quaerat quasi reprehenderit similique tempora ut voluptate. Accusamus, itaque!</span><span>A accusantium alias aliquid aut beatae culpa cupiditate dicta dolorem doloremque error ex facere, inventore iste itaque laboriosam maxime neque numquam odio perspiciatis quae quas sequi sint suscipit tempora voluptatem?</span><span>Atque doloremque eos, iure magnam nihil pariatur possimus! At commodi cupiditate dignissimos doloribus id, nihil porro rem rerum sed sequi temporibus, ut! Accusantium consectetur distinctio doloribus nihil officia, recusandae reiciendis.</span>
+            </p>
+        </div>
+        <div class="col-md-3 order-md-1">
+            <img class="featurette-image img-fluid mx-auto im rounded-circle" data-src="holder.js/500x500/auto" alt="500x500"
+                 style="width: 250px; height: 250px;"
+                 src="~/assets/img/elden-ring.jpeg"
+                 data-holder-rendered="true">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7" data-aos="fade-up">
+            <h2 class="featurette-heading title_societyColor">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ea expedita explicabo fuga illo ipsa molestiae neque nisi non nulla porro provident quae, quasi repellendus similique sint sunt tenetur velit.</span><span>Accusamus assumenda autem consectetur consequuntur, deleniti dignissimos dolorum ducimus eaque ex exercitationem expedita id illo in laudantium obcaecati odio officia quasi quis recusandae, sapiente similique sit tenetur unde ut voluptate!</span><span>Aliquid iusto quos voluptatum. A aliquid cupiditate, earum est ipsam maxime molestiae natus nisi non officiis qui repellendus sit ut? Aperiam atque et eveniet itaque molestiae molestias nostrum veniam voluptatum?</span><span>Ipsam labore laborum neque perspiciatis vel! Accusantium alias animi aperiam assumenda at commodi culpa, dolorem dolorum eveniet ipsa laboriosam laudantium maiores nulla rem sit suscipit totam? At deserunt odit quo!</span>
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto rounded-circle" data-src="holder.js/500x500/auto" alt="500x500"
+                 style="width: 250px; height: 250px;"
+                 src="~/assets/img/elden-ring.jpeg"
+                 data-holder-rendered="true">
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid bg-dark pb-5 pt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var currentWinner in Model)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <img src="~/assets/img/elden-ring.jpeg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">@currentWinner.DungeonName defeated by</h5>
+                        @foreach (var currentHero in currentWinner.Heroes)
+                        {
+                            <p class="card-text">@currentHero.HeroName</p>
+                        }
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a asp-controller="Message" asp-action="SendMessage" asp-route-id="@currentWinner.TeamId" class="btn btn-secondary" type="submit">Send message</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+</body>
+</html>
