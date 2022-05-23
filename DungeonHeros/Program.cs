@@ -1,3 +1,4 @@
+using System;
 using DungeonHeros;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -6,7 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DbContext = DungeonHeros.Models.DbContext;
 using DungeonHeros.Models;
-using DungeonHeros.Models.DataInjector;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Net.Http.Headers;
 
@@ -29,6 +29,8 @@ builder.Services.AddIdentity<User, IdentityRole>(opt => { opt.Password.RequireDi
 builder.Services.AddRazorPages();
 var app = builder.Build();
 
+
+if (app.Environment.IsProduction()) Console.WriteLine("ProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProductionProduction");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

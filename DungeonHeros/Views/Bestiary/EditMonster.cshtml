@@ -22,6 +22,7 @@
                 <div class="form-items">
                     <h3>Modify @Model.MonsterName</h3>
                     <form method="post" class="requires-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                         <input class="form-control" type="text" name="monsterId" value="@Model.MonsterId" placeholder="Monster's name" hidden="true">
 

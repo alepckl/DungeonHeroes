@@ -35,20 +35,20 @@
     <div class="row featurette">
         <div class="col-md-7" data-aos="fade-up">
             <h2 class="featurette-heading title_societyColor">
-                First featurette heading.
+                Dungeons Heroes.
                 <span
                     class="text-muted">
-                    It'll blow your mind.
+                    The world of tomorrow.
                 </span>
             </h2>
             <p class="lead">
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem eos iste nam natus nobis repellendus. Aliquam, amet doloribus eveniet harum magni nisi perferendis quasi quos saepe tempore temporibus voluptatum!</span><span>Amet assumenda corporis dignissimos ducimus ea eos et eum, hic illo ipsa iste magni, minus, molestias mollitia natus neque nostrum nulla perferendis quaerat quidem quo sit soluta sunt ullam veniam.</span><span>Ab deleniti dolorum est eveniet illum inventore omnis perspiciatis ratione sapiente! Ab amet commodi consectetur deleniti deserunt, ea, facere laboriosam laudantium nesciunt nihil nisi nostrum odio pariatur sapiente sint tempora.</span><span>Ab at consequuntur explicabo incidunt inventore maxime modi, molestias necessitatibus nisi perferendis quaerat quis, quos sed, suscipit tempore. Cum earum enim ex fuga minus, molestias nobis temporibus. Molestias possimus, quod!</span>
+                <span>This is our new game, inspired by the greatest MMORPGs in history. Unique classes! (Yes, yes, yes) Majestic dungeons, and above all... Terrifying monsters.  </span>
             </p>
         </div>
         <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto rounded-circle" data-src="holder.js/500x500/auto" alt="500x500"
                  style="width: 250px; height: 250px;"
-                 src="img/elden-ring.jpeg"
+                 src="~/assets/img/presentations.jpeg"
                  data-holder-rendered="true">
         </div>
     </div>
@@ -61,13 +61,13 @@
                 Crazy dungeons with <span class="text-muted">exclusive monsters.</span>
             </h2>
             <p class="lead">
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid commodi consectetur cum doloribus expedita incidunt, molestiae nam nulla numquam, odio odit officiis placeat quos saepe sint sit soluta vero?</span><span>Amet ea molestiae molestias numquam officiis placeat provident, quod repudiandae suscipit temporibus. Amet debitis, deleniti eum expedita, itaque maiores, nam nulla quaerat quasi reprehenderit similique tempora ut voluptate. Accusamus, itaque!</span><span>A accusantium alias aliquid aut beatae culpa cupiditate dicta dolorem doloremque error ex facere, inventore iste itaque laboriosam maxime neque numquam odio perspiciatis quae quas sequi sint suscipit tempora voluptatem?</span><span>Atque doloremque eos, iure magnam nihil pariatur possimus! At commodi cupiditate dignissimos doloribus id, nihil porro rem rerum sed sequi temporibus, ut! Accusantium consectetur distinctio doloribus nihil officia, recusandae reiciendis.</span>
+                <span>Discover breathtaking dungeons. Try to win the ultimate battle against the dark lord. Arm yourself with heroes, each unique, prepare yourself and your equipment, and be ready to mount the ultimate challenge. Can you live up to this terrifying game?</span>
             </p>
         </div>
         <div class="col-md-3 order-md-1">
             <img class="featurette-image img-fluid mx-auto im rounded-circle" data-src="holder.js/500x500/auto" alt="500x500"
                  style="width: 250px; height: 250px;"
-                 src="~/assets/img/elden-ring.jpeg"
+                 src="~/assets/img/boss.jpeg"
                  data-holder-rendered="true">
         </div>
     </div>
@@ -76,15 +76,15 @@
 
     <div class="row featurette">
         <div class="col-md-7" data-aos="fade-up">
-            <h2 class="featurette-heading title_societyColor">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <h2 class="featurette-heading title_societyColor">New Studio <span class="text-muted">innovative.</span></h2>
             <p class="lead">
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ea expedita explicabo fuga illo ipsa molestiae neque nisi non nulla porro provident quae, quasi repellendus similique sint sunt tenetur velit.</span><span>Accusamus assumenda autem consectetur consequuntur, deleniti dignissimos dolorum ducimus eaque ex exercitationem expedita id illo in laudantium obcaecati odio officia quasi quis recusandae, sapiente similique sit tenetur unde ut voluptate!</span><span>Aliquid iusto quos voluptatum. A aliquid cupiditate, earum est ipsam maxime molestiae natus nisi non officiis qui repellendus sit ut? Aperiam atque et eveniet itaque molestiae molestias nostrum veniam voluptatum?</span><span>Ipsam labore laborum neque perspiciatis vel! Accusantium alias animi aperiam assumenda at commodi culpa, dolorem dolorum eveniet ipsa laboriosam laudantium maiores nulla rem sit suscipit totam? At deserunt odit quo!</span>
+                <span>New graphic engine for a new life. Dungeon's Heroes is taking on a unique mode in order to get as close to reality as possible, a team of 40 developers have tackled the style of the game, making it look like the real thing. Some users even believe that the game is shot in real life.</span>
             </p>
         </div>
         <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto rounded-circle" data-src="holder.js/500x500/auto" alt="500x500"
                  style="width: 250px; height: 250px;"
-                 src="~/assets/img/elden-ring.jpeg"
+                 src="~/assets/img/studioLogo.png"
                  data-holder-rendered="true">
         </div>
     </div>
@@ -92,7 +92,14 @@
 
 
 <div class="container-fluid bg-dark pb-5 pt-5">
+    <h2 class="text-white">Hall Of Fame</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
+        @{
+            if (Model.Count == 0)
+            {
+                <h3 class="text-white m-lg-5">Hall of Fame is Empty.</h3>
+            }
+        }
         @foreach (var currentWinner in Model)
         {
             <div class="col">
@@ -105,9 +112,12 @@
                             <p class="card-text">@currentHero.HeroName</p>
                         }
                     </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a asp-controller="Message" asp-action="SendMessage" asp-route-id="@currentWinner.TeamId" class="btn btn-secondary" type="submit">Send message</a>
-                    </div>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-controller="Message" asp-action="SendMessage" asp-route-id="@currentWinner.TeamId" class="btn btn-secondary" type="submit">Send message</a>
+                        </div>   
+                    }
                 </div>
             </div>
         }

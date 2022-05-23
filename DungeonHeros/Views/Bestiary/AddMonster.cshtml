@@ -21,6 +21,7 @@
                 <div class="form-items">
                     <h3>Add monster</h3>
                     <form method="post" class="requires-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                         <div class="col-md-12 mt-3">
                             <input class="form-control" type="text" name="monsterName" placeholder="Monster's name" required>

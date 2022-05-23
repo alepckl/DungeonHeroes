@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ab69b600-b41a-400c-9b4b-4b0a2c4d0352" name="192.168.128.13" url="http://porthos-intra.cg.helmo.be/e200066">
+        <fileTransfer rootFolder="/E200066" accessType="FTPS" host="192.168.128.19" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

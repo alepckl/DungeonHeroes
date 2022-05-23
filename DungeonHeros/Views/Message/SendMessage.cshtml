@@ -13,30 +13,31 @@
     <title>Profile</title>
 </head>
 <body>
-    <div class="form-body">
-        <div class="row">
-            <div class="form-holder">
-                <div class="form-content">
-                    <div class="form-items">
-                        <h3>Send message to winner</h3>
-                        <form method="post">
-                            <input class="form-control" type="text" name="teamId" hidden="true" value="@ViewData["TeamId"]">
-                            <div class="col-md-12">
-                                <input class="form-control" type="text" name="title" placeholder="Message title" required>
-                            </div>
-                            
-                            <div class="col-md-12">
-                               <input class="form-control" type="text" name="message" placeholder="Message to send" required>
-                            </div>
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Send message to winner</h3>
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input class="form-control" type="text" name="teamId" hidden="true" value="@ViewData["TeamId"]">
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="title" placeholder="Message title" required>
+                        </div>
 
-                            <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Send</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="message" placeholder="Message to send" required>
+                        </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

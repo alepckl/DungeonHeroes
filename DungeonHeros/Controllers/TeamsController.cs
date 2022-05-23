@@ -207,7 +207,7 @@ namespace DungeonHeros.Controllers
         /**
          * Retourne l'utilisateur sur base de son ID.
          */
-        private User GetUserById(string id) => _dbContext.Users.Single(u => u.Id == id);
+        private User GetUserById(string id) => _dbContext.Users.Include(h => h.Hero).Single(u => u.Id == id);
         
 
         /**

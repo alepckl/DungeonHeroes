@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ve/Qjs/1jzmaHPz9IxcL5NCRxqqwAl+sIwQUkQ2hKmM=",
+  "Hash": "aRCDqa42GUs9CA4ACHOU7WfsMh16mmlX2dGpv8FJyCM=",
   "Source": "DungeonHeros",
   "BasePath": "_content/DungeonHeros",
   "Mode": "Default",
@@ -1105,6 +1105,23 @@
       "OriginalItemSpec": "wwwroot/assets/dungeon.svg"
     },
     {
+      "Identity": "/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/wwwroot/assets/img/boss.jpeg",
+      "SourceId": "DungeonHeros",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/wwwroot/",
+      "BasePath": "_content/DungeonHeros",
+      "RelativePath": "assets/img/boss.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/img/boss.jpeg"
+    },
+    {
       "Identity": "/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/wwwroot/assets/img/deloitte2.jpg",
       "SourceId": "DungeonHeros",
       "SourceType": "Discovered",
@@ -1188,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/img/myLogo.png"
+    },
+    {
+      "Identity": "/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/wwwroot/assets/img/presentations.jpeg",
+      "SourceId": "DungeonHeros",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/wwwroot/",
+      "BasePath": "_content/DungeonHeros",
+      "RelativePath": "assets/img/presentations.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/img/presentations.jpeg"
     },
     {
       "Identity": "/Users/alexandrep/RiderProjects/DungeonHeros/DungeonHeros/wwwroot/assets/img/studioLogo.png",

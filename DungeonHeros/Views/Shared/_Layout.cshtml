@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,14 +26,17 @@
                 <div class="collapse navbar-collapse" id="main_nav">
                     <ul class="navbar-nav">
                         <li class="nav-item active mainTitle">
-                            <a class="mainTitle nav-link" asp-action="Index" asp-controller="Home">Game</a>
+                            <a class="mainTitle nav-link" asp-action="Index" asp-protocol="#lead" asp-controller="Home">Game</a>
                         </li>
                         <li class="nav-item active mainTitle">
                             <a class="mainTitle nav-link" asp-action="Index" asp-controller="Home">Studio</a>
                         </li>
-                        <li class="nav-item pe-3">
-                            <a class="mainTitle nav-link" href="#">Start the adventure</a>
-                        </li>
+                        @if (!SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item pe-3">
+                                <a class="mainTitle nav-link" asp-area="Identity" asp-page="/Account/Register">Start the adventure</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

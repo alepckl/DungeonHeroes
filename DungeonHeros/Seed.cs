@@ -50,12 +50,12 @@ namespace DungeonHeros
             };
             User basicUser = new()
             {
-                Email = "a.pickel@studentTest.helmo.be", DateOfBirth = DateTime.Now, HeroName = "SkaaveTestSeed",
+                Email = "a.pickel@studentTest.helmo.be", UserName = "SkaaveTestSeed", DateOfBirth = DateTime.Now, HeroName = "SkaaveTestSeed",
                 Hero = secondHero
             };
             User basicUser2 = new()
             {
-                Email = "a.pickel@studentTest2.helmo.be", DateOfBirth = DateTime.Now, HeroName = "AlexandreSeed2",
+                Email = "a.pickel@studentTest2.helmo.be", UserName = "AlexandreSeed2", DateOfBirth = DateTime.Now, HeroName = "AlexandreSeed2",
                 Hero = thirdHero
             };
             var add = um.CreateAsync(myAdmin, "iamyourfather").Result;

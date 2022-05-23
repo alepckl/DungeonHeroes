@@ -18,18 +18,19 @@
 <h1 class="text-white" style="font-size: 60px">Create Team</h1>
 
 <form id="formValues" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
     <section class="TeamDisplay">
-    <div class="container cardContainer">
-        <div class="row text-center" id="team">
-            <input id="" name="players[]" type="text" hidden="true" value="@ViewData["HeroId"]"/>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-secondary" type="button" onclick="check()">Apply and create</button>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        </div>
+        <div class="container cardContainer">
+            <div class="row text-center" id="team">
+                <input id="" name="players[]" type="text" hidden="true" value="@ViewData["HeroId"]"/>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-secondary" type="button" onclick="check()">Apply and create</button>
+            </div>
             <button id="sumbitForm" type="submit" hidden="true"></button>
-    </div>
-</section>
+        </div>
+    </section>
 </form>
 
 <hr class="featurette-divider mt-3 mb-3">

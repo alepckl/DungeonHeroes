@@ -18,7 +18,7 @@
 <div class="container cardContainer">
     <div class="row text-center">
 
-        <form method="post" asp-route-id="">
+        <form method="get">
             <div class="input-group">
                                 <input type="text" class="form-control rounded" name="id" hidden="true" value="@ViewData["TeamId"]"/>
                                 <input id="SearchString" type="search" class="form-control rounded" name="name" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
@@ -61,11 +61,11 @@
                     </ul>
                     @if (ViewData["TeamId"] != null)
                     {
-                        <form method="post" asp-action="AttackDungeon">
+                        <form method="post">
                             <input id="" name="teamId" type="text" hidden="true" value="@ViewData["TeamId"]"/>`
                             <input id="" name="dungeonId" type="text" hidden="true" value="@currentDungeon.DungeonId"/>`
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                                <a class="btn btn-secondary" type="submit">Assault Dungeon</a>
+                                <button class="btn btn-secondary" type="submit">Assault Dungeon</button>
                             </div>
                         </form>
                     }

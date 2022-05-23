@@ -33,26 +33,9 @@ namespace DungeonHeros.Controllers
             _manager = manager;
         }
 
-        public IActionResult Dungeons(int id)
+        public IActionResult Dungeons(int id, string name)
         {
-            if (id == 0)
-            {
-                ViewData["TeamId"] = null;
-            }
-            else
-            {
-                ViewData["TeamId"] = id;   
-            }
-            var allDungeons = _context.Dungeons.Include(m => m.Monsters).ToList();
-
-            return View(allDungeons);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Dungeons(int id, string name)
-        {
-            if (string.IsNullOrEmpty(name)) return RedirectToAction("Dungeons");
-            var dj = GetDungeonByName(name);
+            var dj = string.IsNullOrEmpty(name) ? GetAllDungeons() : GetDungeonByName(name);
             if (id == 0)
             {
                 ViewData["TeamId"] = null;
@@ -63,8 +46,14 @@ namespace DungeonHeros.Controllers
             }
             return View(dj);
         }
-        
+
         [HttpPost, AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Dungeons(int teamId, int dungeonId)
+        {
+            string test = "";
+            return RedirectToAction("FightDungeons", new {teamId = teamId, dungeonId = dungeonId});
+        }
+        
         public async Task<IActionResult> FightDungeons(int teamId, int dungeonId)
         {
             var dungeon = GetDungeonById(dungeonId);
@@ -191,6 +180,8 @@ namespace DungeonHeros.Controllers
             var list = await _context.Dungeons.Where(d => d.DungeonName.Contains(term)).Select(d => d.DungeonName).ToListAsync();
             return Ok(list);
         }
+
+        private List<Dungeon> GetAllDungeons() => _context.Dungeons.Include(h => h.Monsters).ToList();
 
         private List<Dungeon> GetDungeonByName(string name) =>
             _context.Dungeons.Include(h => h.Monsters).Where(d => d.DungeonName.Contains(name)).ToList();
